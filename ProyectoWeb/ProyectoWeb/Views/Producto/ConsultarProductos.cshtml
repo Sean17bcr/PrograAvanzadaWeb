@@ -1,0 +1,41 @@
+﻿@model List<ProyectoWeb.Entities.ProductoEnt>
+
+@{
+    ViewData["Title"] = "ConsultarProductos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Información de Usuarios</h4>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.nombre</td>
+                            <td>@item.descripcion</td>
+                            <td>@item.precio</td>
+                            <td>@item.imagen</td>
+
+
+                            <td style="text-align:center"><a href="@Url.Action("EditarProducto","Producto", new { q = item.IdProducto })"><i class="fa fa-user fa-lg"></i></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
