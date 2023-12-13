@@ -7,5 +7,6 @@ namespace ProyectoWeb.Models
         public List<ProductoEnt>? ConsultarProductos();
         public int EditarProducto(ProductoEnt entidad);
         public int RegistrarProducto(ProductoEnt entidad);
+        public int EliminarProductoPorId(long q);
     }
 }

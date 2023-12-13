@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="~/template/assets/vendor/libs/apex-charts/apex-charts.css" />
     <script src="~/template/assets/vendor/js/helpers.js"></script>
     <script src="~/template/assets/js/config.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 
 <body>
@@ -101,25 +102,27 @@
                       
 
                     <li class="menu-item">
-                        <a href="icons-boxicons.html" class="menu-link">
+                        <a href="@Url.Action("ConsultarProductos","Producto")" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-crown"></i>
-                            <div data-i18n="Boxicons">Pedidos</div>
+                            <div data-i18n="Boxicons">Productos</div>
                         </a>
                     </li>
-
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Importante</span></li>
-
                     <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-detail"></i>
-                            <div data-i18n="Form Elements">Ordenes Anteriores</div>
+                        <a href="@Url.Action("ObtenerTodasLasReservas","Reservas")" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-crown"></i>
+                            <div data-i18n="Boxicons">Reservas</div>
                         </a>
-                        
                     </li>
                     <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-detail"></i>
-                            <div data-i18n="Form Layouts">Ordenes Canceladas</div>
+                        <a href="@Url.Action("ObtenerTodosLosUsuarios","Usuario")" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-crown"></i>
+                            <div data-i18n="Boxicons">Usuarios</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="@Url.Action("VerComentarios","Comentarios")" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-crown"></i>
+                            <div data-i18n="Boxicons">Comentarios</div>
                         </a>
                     </li>
 

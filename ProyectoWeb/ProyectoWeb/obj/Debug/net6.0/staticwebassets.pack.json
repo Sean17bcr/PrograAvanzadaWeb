@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\seanb\\Documents\\ProyectoPrograAvanzadaEnWeb\\PrograAvanzadaWeb\\ProyectoWeb\\ProyectoWeb\\wwwroot\\js\\ConsultaNombreApi.js",
+      "PackagePath": "staticwebassets\\js\\ConsultaNombreApi.js"
+    },
+    {
       "Id": "C:\\Users\\seanb\\Documents\\ProyectoPrograAvanzadaEnWeb\\PrograAvanzadaWeb\\ProyectoWeb\\ProyectoWeb\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

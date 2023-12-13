@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Wxg4uEj5OgC5FhfYPSq4Z4qNDXYkuZJlnGUlwonKeVM=",
+  "Hash": "iX9VPscbrz6jEWLMT+QLBS7MTRdWf9CYVhmiudgNHIY=",
   "Source": "ProyectoWeb",
   "BasePath": "_content/ProyectoWeb",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\seanb\\Documents\\ProyectoPrograAvanzadaEnWeb\\PrograAvanzadaWeb\\ProyectoWeb\\ProyectoWeb\\wwwroot\\js\\ConsultaNombreApi.js",
+      "SourceId": "ProyectoWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\seanb\\Documents\\ProyectoPrograAvanzadaEnWeb\\PrograAvanzadaWeb\\ProyectoWeb\\ProyectoWeb\\wwwroot\\",
+      "BasePath": "_content/ProyectoWeb",
+      "RelativePath": "js/ConsultaNombreApi.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\ConsultaNombreApi.js"
     },
     {
       "Identity": "C:\\Users\\seanb\\Documents\\ProyectoPrograAvanzadaEnWeb\\PrograAvanzadaWeb\\ProyectoWeb\\ProyectoWeb\\wwwroot\\js\\site.js",

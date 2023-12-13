@@ -17,14 +17,12 @@ namespace ProyectoWeb.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult EditarProducto(long q)
         {
-            var entidad = new ProductoEnt();
-            entidad.IdProducto = q;
-
-            _productoModel.EditarProducto(entidad);
-            return RedirectToAction("ConsultarUsuarios", "Producto");
+            var datos = _productoModel.ConsultarProductos().Where(x => x.IdProducto == q).FirstOrDefault();
+            return View(datos);
         }
 
 
@@ -35,11 +33,11 @@ namespace ProyectoWeb.Controllers
 
             if (resp == 1)
             {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("ConsultarProductos", "Producto");
             }
             else
             {
-                ViewBag.MensajePantalla = "No se pudo actualizar su cuenta";
+                ViewBag.MensajePantalla = "No se pudo actualizar el producto";
                 return View();
             }
         }
@@ -69,6 +67,14 @@ namespace ProyectoWeb.Controllers
                 ViewBag.MensajePantalla = "No se pudo registrar su cuenta";
                 return View();
             }
+        }
+
+        [HttpGet]
+        public IActionResult EliminarProductoPorId(long q)
+        {
+            _productoModel.EliminarProductoPorId(q);
+
+            return RedirectToAction("ConsultarProductos", "Producto");
         }
 
     }

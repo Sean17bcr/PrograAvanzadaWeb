@@ -9,6 +9,9 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession();
 builder.Services.AddSingleton<IUsuarioModel, UsuarioModel>();
 builder.Services.AddSingleton<IProductoModel, ProductoModel>();
+builder.Services.AddSingleton<IComentariosModel, ComentariosModel>();
+builder.Services.AddSingleton<IReservasModel, ReservasModel>();
+
 
 
 var app = builder.Build();
