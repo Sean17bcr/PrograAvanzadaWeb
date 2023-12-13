@@ -72,7 +72,36 @@ namespace ProyectoApi.Controllers
                 using (var context = new SqlConnection(_connection))
                 {
                     var datos = context.Execute("EditarProducto",
-                        new { entidad.IdProducto },
+                        new {
+                            entidad.IdProducto,
+                            entidad.nombre,
+                            entidad.descripcion,
+                            entidad.precio,
+                            entidad.imagen
+                        },
+                        commandType: CommandType.StoredProcedure);
+
+                    return Ok(datos);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        [Route("EliminarProductoPorId")]
+        public IActionResult EliminarProductoPorId(long q)
+        {
+            try
+            {
+                long IdProducto = q;
+                
+                using (var context = new SqlConnection(_connection))
+                {
+                    var datos = context.Execute("EliminarProductoPorId",
+                        new { IdProducto },
                         commandType: CommandType.StoredProcedure);
 
                     return Ok(datos);

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProyectoApi.Entities;
 using System.Data.SqlClient;
@@ -10,34 +9,29 @@ namespace ProyectoApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController : ControllerBase
+    public class ReservasController : ControllerBase
     {
         private readonly IConfiguration _configuration;
         private string _connection;
-        public UsuarioController(IConfiguration configuration)
+        public ReservasController(IConfiguration configuration)
         {
             _configuration = configuration;
             _connection = _configuration.GetConnectionString("DefaultConnection");
-            
+
         }
 
-
         [HttpPost]
-        [Route("RegistrarUsuario")]
-        public IActionResult RegistrarUsuario(UsuarioEnt entidad)
+        [Route("InsertarReserva")]
+        public IActionResult InsertarReserva(ReservasEnt entidad)
         {
             try
             {
                 using (var context = new SqlConnection(_connection))
                 {
-                    
-                    var datos = context.Execute("RegistrarUsuario",
+                    var datos = context.Execute("InsertarReserva",
                         new { 
-                            entidad.identificacion,
-                            entidad.nombre,
-                            entidad.usuario,
-                            entidad.correo,
-                            entidad.contrasenna
+                            entidad.IdUsuario,
+                            entidad.fecha_reserva
                         },
                         commandType: CommandType.StoredProcedure);
 
@@ -51,14 +45,14 @@ namespace ProyectoApi.Controllers
         }
 
         [HttpGet]
-        [Route("ObtenerTodosLosUsuarios")]
-        public IActionResult ObtenerTodosLosUsuarios()
+        [Route("ObtenerTodasLasReservas")]
+        public IActionResult ObtenerTodasLasReservas()
         {
             try
             {
                 using (var context = new SqlConnection(_connection))
                 {
-                    var datos = context.Query<UsuarioEnt>("ObtenerTodosLosUsuarios",
+                    var datos = context.Query<ReservasEnt>("ObtenerTodasLasReservas",
                         new { },
                         commandType: CommandType.StoredProcedure).ToList();
 
@@ -72,24 +66,19 @@ namespace ProyectoApi.Controllers
         }
 
         [HttpPut]
-        [Route("ActualizarUsuario")]
-        public IActionResult ActualizarUsuario(UsuarioEnt entidad)
+        [Route("ActualizarReserva")]
+        public IActionResult ActualizarReserva(ReservasEnt entidad)
         {
             try
             {
                 using (var context = new SqlConnection(_connection))
                 {
-                    var datos = context.Execute("ActualizarUsuario",
+                    var datos = context.Execute("ActualizarReserva",
                         new
                         {
-                            entidad.IdUsuario, 
-                            entidad.identificacion,
-                            entidad.nombre,
-                            entidad.usuario,
-                            entidad.correo,
-                            entidad.contrasenna,
-                            entidad.ConRol,
-                            entidad.estado,
+                            entidad.IdReservas,
+                            entidad.IdUsuario,
+                            entidad.fecha_reserva
                         },
                         commandType: CommandType.StoredProcedure);
 
@@ -102,19 +91,19 @@ namespace ProyectoApi.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("ObtenerUsuarioPorId")]
-        public IActionResult ObtenerUsuarioPorId(long q)
+        [HttpDelete]
+        [Route("EliminarReservaPorId")]
+        public IActionResult EliminarReservaPorId(long q)
         {
             try
             {
-                long IdUsuario = q;
+                long IdReservas = q;
 
                 using (var context = new SqlConnection(_connection))
                 {
-                    var datos = context.Query<UsuarioEnt>("ObtenerUsuarioPorId",
-                        new { IdUsuario },
-                        commandType: CommandType.StoredProcedure).ToList();
+                    var datos = context.Execute("EliminarReservaPorId",
+                        new { IdReservas },
+                        commandType: CommandType.StoredProcedure);
 
                     return Ok(datos);
                 }
@@ -124,9 +113,10 @@ namespace ProyectoApi.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpDelete]
-        [Route("EliminarUsuarioPorId")]
-        public IActionResult EliminarUsuarioPorId(long q)
+
+        [HttpGet]
+        [Route("ObtenerReservasdeUser")]
+        public IActionResult ObtenerReservasdeUser(long q)
         {
             try
             {
@@ -134,9 +124,9 @@ namespace ProyectoApi.Controllers
 
                 using (var context = new SqlConnection(_connection))
                 {
-                    var datos = context.Execute("EliminarUsuarioPorId",
+                    var datos = context.Query<ReservasEnt>("ObtenerReservasdeUser",
                         new { IdUsuario },
-                        commandType: CommandType.StoredProcedure);
+                        commandType: CommandType.StoredProcedure).ToList();
 
                     return Ok(datos);
                 }

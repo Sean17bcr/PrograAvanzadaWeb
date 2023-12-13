@@ -7,8 +7,9 @@
         public string nombre { get; set; } = string.Empty;
         public string usuario { get; set; } = string.Empty;
         public string correo { get; set; } = string.Empty;
-        public string contraseña { get; set; } = string.Empty;
+        public string contrasenna { get; set; } = string.Empty;
+        public long ConRol { get; set; }
         public bool estado { get; set; }
-
+        
     }
 }

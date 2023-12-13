@@ -30,7 +30,11 @@ namespace ProyectoWeb.Controllers
             return View();
         }
 
-        
+        [HttpGet]
+        public IActionResult Prueba()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
