@@ -6,4 +6,5 @@
         public long IdUsuario { get; set; }
         public string comentario { get; set; } = string.Empty;
     }
+
 }

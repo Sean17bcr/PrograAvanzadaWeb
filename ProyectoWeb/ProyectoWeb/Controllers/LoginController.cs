@@ -5,6 +5,7 @@ using System.Diagnostics;
 
 namespace ProyectoWeb.Controllers
 {
+    [ResponseCache(NoStore = true, Duration = 0)]
     public class LoginController : Controller
     {
         private readonly IUsuarioModel _usuarioModel;
@@ -53,12 +54,16 @@ namespace ProyectoWeb.Controllers
             if (resp != null)
             {
                 HttpContext.Session.SetString("NombreUsuario", resp.nombre);
-                HttpContext.Session.SetString("NombreUsuario", resp.IdUsuario.ToString());
+                HttpContext.Session.SetString("IdUsuario", resp.IdUsuario.ToString());
                 HttpContext.Session.SetString("RolUsuario", resp.ConRol.ToString());
 
                 var datos = _carritoModel.ConsultarCarrito();
-                HttpContext.Session.SetString("Total", datos.Sum(x => x.Total).ToString());
-                HttpContext.Session.SetString("Cantidad", datos.Sum(x => x.Cantidad).ToString());
+                if (datos != null)
+                {
+                    HttpContext.Session.SetString("Total", datos.Sum(x => x.Total).ToString());
+                    HttpContext.Session.SetString("Cantidad", datos.Sum(x => x.Cantidad).ToString());
+                }
+                    
 
                 return RedirectToAction("Index", "Login");
             }
