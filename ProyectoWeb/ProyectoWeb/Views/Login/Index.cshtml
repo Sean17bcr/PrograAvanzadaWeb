@@ -3,18 +3,17 @@
     ViewData["Title"] = "Home Page";
 }
 
-
-<div style="margin: 30px">
+<div class="row">
 @if (Model.Count() > 0)
 {
 
     foreach (var item in Model)
     {
-        <div class="col-3">
+        <div class="col-3" style="margin:20px">
             <div class="card text-center">
                 <div class="card-body">
 
-                    <img src="@item.imagen" width="200" height="150"/>
+                        <img src="@item.imagen" width="70%" height="50%" />
                     <br /><br />
 
                     <h5 class="card-title">@item.nombre</h5>
@@ -31,8 +30,8 @@
                             </div>
                             @if (Context.Session.GetString("RolUsuario") == "3" || Context.Session.GetString("RolUsuario") == "1")
                             {
-                                <div class="col-3">
-                                    <a onclick="AgregarCarrito(@item.IdProducto" class="btn btn-primary"><box-icon name='cart-download'></box-icon></a>
+                                    <div class="col-3">
+                                        <a onclick="AgregarCarrito(@item.IdProducto, @item.Cantidad)" class="btn btn-primary"><box-icon name='cart-download'></box-icon></a>
                                 </div>
                             }
                             
@@ -51,12 +50,14 @@ else
     </div>
 }
 </div>
+
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script>
 
-    function AgregarCarrito(IdProducto) {
+    function AgregarCarrito(IdProducto, Disponibles) {
+        let cantidadComprar = $("#cnt-" + IdProducto).val();
 
-        if (IdProducto == null) {
+        if (cantidadComprar > Disponibles) {
 
             Swal.fire({
                 type: 'error',
@@ -71,7 +72,8 @@ else
                 url: "/Carrito/RegistrarCarrito",
                 dataType: "json",
                 data: {
-                    "IdProducto": IdProducto
+                    "IdProducto": IdProducto,
+                    "cantidadComprar": cantidadComprar
                 },
                 success: function (result) {
                     window.location.href = '@Url.Action("Index","Login")'

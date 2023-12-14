@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoWeb\ProyectoWeb
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/Carrito/ConsultarCarrito.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycml0b1xDb25zdWx0YXJDYXJyaXRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/Carrito/ConsultarDetalleFactura.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycml0b1xDb25zdWx0YXJEZXRhbGxlRmFjdHVyYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/Carrito/ConsultarFacturas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycml0b1xDb25zdWx0YXJGYWN0dXJhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/Comentarios/RegistrarComentario.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tZW50YXJpb3NcUmVnaXN0cmFyQ29tZW50YXJpby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

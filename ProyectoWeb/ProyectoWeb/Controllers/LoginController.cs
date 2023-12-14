@@ -60,11 +60,10 @@ namespace ProyectoWeb.Controllers
 
 
                 var datos = _carritoModel.ConsultarCarrito();
-                if (datos != null)
-                {
-                    HttpContext.Session.SetString("Total", datos.Sum(x => x.Total).ToString());
-                    HttpContext.Session.SetString("Cantidad", datos.Sum(x => x.Cantidad).ToString());
-                }
+                
+                HttpContext.Session.SetString("Total", datos.Sum(x => x.Total).ToString());
+                HttpContext.Session.SetString("Cantidad", datos.Sum(x => x.Cantidad).ToString());
+                
                     
 
                 return RedirectToAction("Index", "Login");

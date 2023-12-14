@@ -221,15 +221,24 @@
                                         <span class="align-middle">Cerrar Sesión</span>
                                     </a>
                                 </li>
+
                                 <li>
-                                @if (Context.Session.GetString("NombreUsuario") != null)
-                                {
-                                    <div style="margin-left:2%">
-                                        <box-icon name='spreadsheet' color='#626161'></box-icon> @Context.Session.GetString("Cantidad").ToString() &nbsp;&nbsp;&nbsp;
+                                    <div style="margin-left:2%" class="container-xxl navbar navbar-expand-xl  align-items-center">
+                                        <box-icon name='spreadsheet' color='#626161'></box-icon> @Context.Session.GetString("Cantidad").ToString() 
+                                        <br/>
                                         <box-icon name='spreadsheet' color='#626161'></box-icon> @decimal.Parse(Context.Session.GetString("Total")).ToString("N2").ToString() + ivi
                                     </div>
-                                }
                                 </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-expanded="false" aria-controls="ui-basic" href="@Url.Action("ConsultarCarrito","Carrito")">
+                                        <i class="icon-layout menu-icon"></i>
+                                        <span class="menu-title">Pagar Carrito</span>
+                                    </a>
+
+                                </li>
+
+                                
                             }
                             else
                             {
