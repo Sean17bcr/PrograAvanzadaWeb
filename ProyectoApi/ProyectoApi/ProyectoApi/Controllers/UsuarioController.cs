@@ -83,11 +83,11 @@ namespace ProyectoApi.Controllers
                         new
                         {
                             entidad.IdUsuario, 
-                            entidad.identificacion,
+                            //entidad.identificacion,
                             entidad.nombre,
                             entidad.usuario,
-                            entidad.correo,
-                            entidad.contrasenna,
+                            //entidad.correo,
+                            //entidad.contrasenna,
                             entidad.ConRol,
                             entidad.estado,
                         },

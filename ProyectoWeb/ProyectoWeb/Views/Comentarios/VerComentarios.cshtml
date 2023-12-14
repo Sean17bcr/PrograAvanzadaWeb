@@ -1,0 +1,54 @@
+﻿@model List<ProyectoWeb.Entities.ComentariosEnt>
+
+@{
+    ViewData["Title"] = "VerComentarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-11 grid-margin stretch-card" style="margin-left: 50px; margin-top: 30px;">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Todos los comentarios realizados</h4>
+            <div>
+                <p>
+                    Agregar Comentario
+                    <a href="@Url.Action("RegistrarComentario","Comentarios")">
+                        <box-icon style="height:20px; width:20px" name='add-to-queue'></box-icon>
+                    </a>
+                </p>
+
+            </div>
+            <div class="table-responsive text-nowrap">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Comentario</th>
+                            @if (Context.Session.GetString("RolUsuario") == "1")
+                            {
+                                <th>Acciones</th>
+                            }
+                            
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.comentario</td>
+                                @if (Context.Session.GetString("RolUsuario") == "1")
+                                {
+                                <td style="text-align:center">
+                                    <a href="@Url.Action("EliminarComentarioPorId","Comentarios", new { q = item.IdComentarios })">
+                                        <box-icon style="height:50px; width:50px" type='solid' name='checkbox-minus'></box-icon>
+                                    </a>
+                                </td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

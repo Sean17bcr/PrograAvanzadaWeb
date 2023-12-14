@@ -7,6 +7,7 @@ namespace ProyectoWeb.Controllers
     public class ReservasController : Controller
     {
         private readonly IReservasModel _reservasModel;
+        private readonly IUsuarioModel _UsuarioModel;
 
         public ReservasController(IReservasModel reservasModel)
         {
@@ -18,9 +19,9 @@ namespace ProyectoWeb.Controllers
         }
 
         [HttpGet]
-        public IActionResult ActualizarReserva(long q)
+        public IActionResult ActualizarReserva(long q, long i)
         {
-            var datos = _reservasModel.ObtenerTodasLasReservas().Where(x => x.IdReservas == q).FirstOrDefault();
+            var datos = _reservasModel.ObtenerTodasLasReservas().Where(x => x.IdReservas == q && x.IdUsuario == i).FirstOrDefault();
             return View(datos);
         }
 
@@ -44,8 +45,27 @@ namespace ProyectoWeb.Controllers
         [HttpGet]
         public IActionResult ObtenerTodasLasReservas()
         {
-            var datos = _reservasModel.ObtenerTodasLasReservas();
-            return View(datos);
+
+
+            if (HttpContext.Session.GetString("RolUsuario") == "1" || HttpContext.Session.GetString("RolUsuario") == "2")
+            {
+
+                var datos = _reservasModel.ObtenerTodasLasReservas();
+
+                return View(datos);
+            }
+            else if (HttpContext.Session.GetString("RolUsuario") == "3")
+            {
+                string idUsuarioString = HttpContext.Session.GetString("IdUsuario");
+                if (long.TryParse(idUsuarioString, out long idUsuario))
+                {
+                    var id = idUsuario;
+                    var datos = _reservasModel.ObtenerTodasLasReservas().Where(x => x.IdUsuario == id).ToList();
+                    return View(datos);
+                }
+            }
+
+            return View();
         }
 
         [HttpGet]
@@ -57,6 +77,12 @@ namespace ProyectoWeb.Controllers
         [HttpPost]
         public IActionResult InsertarReserva(ReservasEnt entidad)
         {
+            string idUsuarioString = HttpContext.Session.GetString("IdUsuario");
+            if (long.TryParse(idUsuarioString, out long idUsuario))
+            {
+                entidad.IdUsuario = idUsuario;
+            }
+
             var resp = _reservasModel.InsertarReserva(entidad);
 
             if (resp == 1)
@@ -69,7 +95,7 @@ namespace ProyectoWeb.Controllers
         }
 
         [HttpGet]
-        public IActionResult EliminarProductoPorId(long q)
+        public IActionResult EliminarReservaPorId(long q)
         {
             _reservasModel.EliminarReservaPorId(q);
 

@@ -1,0 +1,34 @@
+﻿@model ProyectoWeb.Entities.ReservasEnt
+
+@{
+    ViewData["Title"] = "EditarReserva";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Información General</h4>
+
+            @using (Html.BeginForm("ActualizarReserva", "Reservas", FormMethod.Post, new { @class = "pt-3" }))
+            {
+                @ViewBag.MensajePantalla
+
+                @Html.HiddenFor(m => m.IdReservas)
+                @Html.HiddenFor(m => m.IdUsuario)
+
+                <div class="form-group">
+                    <label>Fecha de la reserva</label>
+                    @Html.TextBoxFor(m => m.fecha_reserva, new { @class="form-control", @type="datetime-local", @placeholder="Fecha de la reserva" })
+                </div>
+                @* <div class="form-group">
+                    <label>Usuario</label>
+                    @Html.TextBoxFor(m => m.descripcion, new { @class="form-control form-control-lg", @type="text", @placeholder="Descripcion del Producto" })
+                </div> *@
+                
+
+                <button type="submit" class="btn btn-primary mr-2">Procesar</button>
+            }
+        </div>
+    </div>
+</div>

@@ -57,6 +57,8 @@ namespace ProyectoWeb.Controllers
                 HttpContext.Session.SetString("IdUsuario", resp.IdUsuario.ToString());
                 HttpContext.Session.SetString("RolUsuario", resp.ConRol.ToString());
 
+
+
                 var datos = _carritoModel.ConsultarCarrito();
                 if (datos != null)
                 {

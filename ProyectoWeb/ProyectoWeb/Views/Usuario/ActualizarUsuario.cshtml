@@ -1,0 +1,45 @@
+﻿@model ProyectoWeb.Entities.UsuarioEnt
+
+@{
+    ViewData["Title"] = "EditarUsuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Información General</h4>
+
+            @using (Html.BeginForm("ActualizarUsuario", "Usuario", FormMethod.Post, new { @class = "pt-3" }))
+            {
+                @ViewBag.MensajePantalla
+
+                @Html.HiddenFor(m => m.IdUsuario)
+
+                <div class="mb-3">
+                    @Html.TextBoxFor(m => m.nombre, new {@class="form-control form-control-lg", @type="text", @placeholder="Nombre"})
+                </div>
+                <div class="mb-3">
+                    @Html.DropDownListFor(m => m.ConRol,
+                        new SelectList(new[]
+                        {
+                        new { Value = 1, Text = "Administrador" },
+                        new { Value = 2, Text = "Empleado" },
+                        new { Value = 3, Text = "Cliente" }
+                        }, "Value", "Text"),
+                        "-- Selecciona un Rol --",
+                        new { @class = "form-control form-control-lg" })
+                </div>
+                <div class="mb-3">
+                    @Html.CheckBoxFor(m => m.estado)
+                    @Html.LabelFor(m => m.estado, "Estado")
+                </div>
+                <div class="mb-3">
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mr-2">Procesar</button>
+            }
+        </div>
+    </div>
+</div>

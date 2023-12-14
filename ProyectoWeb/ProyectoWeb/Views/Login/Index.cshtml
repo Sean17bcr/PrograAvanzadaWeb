@@ -1,3 +1,83 @@
-﻿@{
+﻿@model List<ProyectoWeb.Entities.ProductoEnt>
+@{
     ViewData["Title"] = "Home Page";
 }
+
+
+<div style="margin: 30px">
+@if (Model.Count() > 0)
+{
+
+    foreach (var item in Model)
+    {
+        <div class="col-3">
+            <div class="card text-center">
+                <div class="card-body">
+
+                    <img src="@item.imagen" width="200" height="150"/>
+                    <br /><br />
+
+                    <h5 class="card-title">@item.nombre</h5>
+                    <p class="card-text">@item.descripcion</p>
+                    <p class="card-text"> ¢@item.precio.ToString("N2")</p>
+
+                    @if (Context.Session.GetString("NombreUsuario") != null)
+                    {
+                        <div class="row">
+                            <div class="col-2">
+                            </div>
+                            <div class="col-5">
+                                <input type="hidden" class="form-control" id=cnt-@item.IdProducto>
+                            </div>
+                            @if (Context.Session.GetString("RolUsuario") == "3" || Context.Session.GetString("RolUsuario") == "1")
+                            {
+                                <div class="col-3">
+                                    <a onclick="AgregarCarrito(@item.IdProducto" class="btn btn-primary"><box-icon name='cart-download'></box-icon></a>
+                                </div>
+                            }
+                            
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="col-12" style="text-align:center; margin-top:5%; font-size:16pt">
+        No hay productos disponibles en este momento
+    </div>
+}
+</div>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script>
+
+    function AgregarCarrito(IdProducto) {
+
+        if (IdProducto == null) {
+
+            Swal.fire({
+                type: 'error',
+                title: 'Información',
+                text: 'La cantidad ingresada supera las unidades disponibles'
+            })
+
+        }
+        else {
+            $.ajax({
+                type: "POST",
+                url: "/Carrito/RegistrarCarrito",
+                dataType: "json",
+                data: {
+                    "IdProducto": IdProducto
+                },
+                success: function (result) {
+                    window.location.href = '@Url.Action("Index","Login")'
+                }
+            });
+        }
+    }
+
+</script>

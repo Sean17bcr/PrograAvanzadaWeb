@@ -1,0 +1,81 @@
+﻿@model List<ProyectoWeb.Entities.UsuarioEnt>
+
+@{
+    ViewData["Title"] = "VerUsuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-11 grid-margin stretch-card" style="margin-left: 50px; margin-top: 30px;">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Todos los usuarios</h4>
+            <div>
+
+            </div>
+            <div class="table-responsive text-nowrap">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>identificacion</th>
+                            <th>nombre</th>
+                            <th>usuario</th>
+                            <th>correo</th>
+                            <th>Rol</th>
+                            <th>Estado</th>
+                            @if (Context.Session.GetString("RolUsuario") == "1")
+                            {
+                                <th>Acciones</th>
+                            }
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.identificacion</td>
+                                <td>@item.nombre</td>
+                                <td>@item.usuario</td>
+                                <td>@item.correo</td>
+                                @if(item.ConRol == 1)
+                                {
+                                    <td>Administrador</td>
+                                }
+                                @if (item.ConRol == 2)
+                                {
+                                    <td>Empleado</td>
+                                }
+                                @if (item.ConRol == 3)
+                                {
+                                    <td>Cliente</td>
+                                }
+                                @if (item.estado == true)
+                                {
+                                    <td>Activo</td>
+                                }
+                                @if (item.estado == false)
+                                {
+                                    <td>Desactivado</td>
+                                }
+                                
+                                
+                                @if (Context.Session.GetString("RolUsuario") == "1")
+                                {
+                                    <td style="text-align:center">
+                                        <a href="@Url.Action("EliminarUsuarioPorId","Usuario", new { q = item.IdUsuario })">
+                                            <box-icon style="height:50px; width:50px" type='solid' name='checkbox-minus'></box-icon>
+                                        </a>
+                                        <a href="@Url.Action("ActualizarUsuario","Usuario", new { q = item.IdUsuario, i = item.IdUsuario })">
+                                            <box-icon style="height:45px; width:45px" type='solid' name='edit-alt'></box-icon>
+                                        </a>
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

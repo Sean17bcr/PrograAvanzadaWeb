@@ -22,7 +22,7 @@ namespace ProyectoWeb.Controllers
 
         
         [HttpGet]
-        public IActionResult EditarProducto(long q)
+        public IActionResult ActualizarUsuario(long q)
         {
             var datos = _usuarioModel.ObtenerTodosLosUsuarios().Where(x => x.IdUsuario == q).FirstOrDefault();
             return View(datos);

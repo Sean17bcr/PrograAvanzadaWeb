@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoWeb\ProyectoWeb
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/Comentarios/RegistrarComentario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tZW50YXJpb3NcUmVnaXN0cmFyQ29tZW50YXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/Comentarios/VerComentarios.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tZW50YXJpb3NcVmVyQ29tZW50YXJpb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -40,12 +48,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cUmVnaXN0cmFyUHJvZHVjdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/Reservas/ActualizarReserva.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcQWN0dWFsaXphclJlc2VydmEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/Reservas/InsertarReserva.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcSW5zZXJ0YXJSZXNlcnZhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/Reservas/ObtenerTodasLasReservas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcT2J0ZW5lclRvZGFzTGFzUmVzZXJ2YXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/Usuario/ActualizarUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xBY3R1YWxpemFyVXN1YXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/Usuario/ObtenerTodosLosUsuarios.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xPYnRlbmVyVG9kb3NMb3NVc3Vhcmlvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/seanb/Documents/ProyectoPrograAvanzadaEnWeb/PrograAvanzadaWeb/ProyectoWeb/ProyectoWeb/Views/_ViewImports.cshtml]
