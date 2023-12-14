@@ -100,7 +100,7 @@ namespace ProyectoApi.Controllers
                     var datos = context.Query<string>("PagarCarrito",
                         new { IdUsuario },
                         commandType: CommandType.StoredProcedure).FirstOrDefault();
-                    _httpContextAccessor.HttpContext.Session.Clear();
+                    //_httpContextAccessor.HttpContext.Session.Clear();
                     return Ok(datos);
                 }
             }
