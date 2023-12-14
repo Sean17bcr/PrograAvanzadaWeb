@@ -8,17 +8,16 @@
 <div class="content-wrapper d-flex align-items-center auth px-0" style="margin-top:20px">
     <div class="row col-md-10 mx-0 card mb-4">
         <div class="card-body">
-            <h4 class="card-title">Información de Facturas</h4>
+            <h4 class="card-title">Información de Pedidos</h4>
 
             <br>
 
             <table id="showData" class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Número Factura</th>
-                        <th>Fecha Compra</th>
-                        <th>Total Compra</th>
-                        <th>Ver Detalle</th>
+                        <th>Número de Pedido</th>
+                        <th>Fecha Pedido</th>
+                        <th>Total Pedido</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,7 +27,6 @@
                             <td># @item.IdFactura</td>
                             <td>@item.FechaPago</td>
                             <td>@item.TotalPago.ToString("N2")</td>
-                            <td><a href="@Url.Action("ConsultarDetalleFactura","Carrito", new { q = item.IdFactura })"><i class="fa fa-search fa-lg"></i></a></td>
                         </tr>
                     }
                 </tbody>

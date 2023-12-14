@@ -20,6 +20,9 @@
                     @Html.TextBoxFor(m => m.nombre, new {@class="form-control form-control-lg", @type="text", @placeholder="Nombre"})
                 </div>
                 <div class="mb-3">
+                    @Html.TextBoxFor(m => m.usuario, new {@class="form-control form-control-lg", @type="text", @placeholder="Usuario", @readonly = "readonly"})
+                </div>
+                <div class="mb-3">
                     @Html.DropDownListFor(m => m.ConRol,
                         new SelectList(new[]
                         {

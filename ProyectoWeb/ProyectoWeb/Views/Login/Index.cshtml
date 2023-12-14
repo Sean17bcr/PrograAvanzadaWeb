@@ -26,12 +26,12 @@
                             <div class="col-2">
                             </div>
                             <div class="col-5">
-                                <input type="hidden" class="form-control" id=cnt-@item.IdProducto>
+                                    <input type="number" maxlength="1" class="form-control" id=cnt-@item.IdProducto>
                             </div>
                             @if (Context.Session.GetString("RolUsuario") == "3" || Context.Session.GetString("RolUsuario") == "1")
                             {
-                                    <div class="col-3">
-                                        <a onclick="AgregarCarrito(@item.IdProducto, @item.Cantidad)" class="btn btn-primary"><box-icon name='cart-download'></box-icon></a>
+                                <div class="col-3">
+                                        <a onclick="AgregarCarrito(@item.IdProducto)" class="btn btn-primary"><box-icon name='cart-download'></box-icon></a>
                                 </div>
                             }
                             
@@ -57,7 +57,7 @@ else
     function AgregarCarrito(IdProducto, Disponibles) {
         let cantidadComprar = $("#cnt-" + IdProducto).val();
 
-        if (cantidadComprar > Disponibles) {
+        if (cantidadComprar == null) {
 
             Swal.fire({
                 type: 'error',

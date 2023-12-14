@@ -122,7 +122,7 @@
                         <li class="menu-item">
                             <a href ="@Url.Action("ConsultarFacturas","Carrito")" class="menu-link">
                                 <box-icon name='spreadsheet' color='#626161'></box-icon>
-                                <div data-i18n="Boxicons">Ver Facturas</div>
+                                <div data-i18n="Boxicons">Ver Pedidos</div>
                             </a>
                         </li>
                         <li class="menu-item">
@@ -136,38 +136,25 @@
                     @if (Context.Session.GetString("RolUsuario") == "2")
                     {
                         <li class="menu-item">
-                            <a href="@Url.Action("ObtenerTodasLasReservas","Reservas")" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-crown"></i>
-                                <div data-i18n="Boxicons">Reservas</div>
+                            <a href="@Url.Action("ConsultarProductos","Producto")" class="menu-link">
+                                <box-icon name='bowl-hot' color='#626161'></box-icon>
+                                <div data-i18n="Boxicons">Productos</div>
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="@Url.Action("ConsultarFacturas","Carrito")" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-crown"></i>
-                                <div data-i18n="Boxicons">Ver Pedidos</div>
+                            <a href="@Url.Action("ObtenerTodasLasReservas","Reservas")" class="menu-link">
+                                <box-icon name='food-menu' color='#626161'></box-icon>
+                                <div data-i18n="Boxicons">Reservas</div>
                             </a>
                         </li>
                         
                     }
                     @if (Context.Session.GetString("RolUsuario") == "3")
                     {
-                        @* CAMBIARRRRRR
-                            <li class="menu-item">
-                            <a href="@Url.Action("ConsultarProductos","Producto")" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-crown"></i>
-                                <div data-i18n="Boxicons">Productos</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href ="@Url.Action("ConsultarFacturas","Carrito")" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-crown"></i>
-                                <div data-i18n="Boxicons">Ver Facturas</div>
-                            </a>
-                        </li>*@
                         <li class="menu-item">
                             <a href="@Url.Action("ObtenerTodasLasReservas","Reservas")" class="menu-link">
-                                <i class="menu-icon tf-icons bx bx-crown"></i>
-                                <div data-i18n="Boxicons">Reservar</div>
+                                <box-icon name='food-menu' color='#626161'></box-icon>
+                                <div data-i18n="Boxicons">Reservas</div>
                             </a>
                         </li>
                         <li class="menu-item">
@@ -180,6 +167,12 @@
                             <a href="@Url.Action("RegistrarComentario","Comentarios")" class="menu-link">
                                 <i class="menu-icon tf-icons bx bx-crown"></i>
                                 <div data-i18n="Boxicons">Comentar</div>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="@Url.Action("ConsultarFacturas","Carrito")" class="menu-link">
+                                <box-icon name='spreadsheet' color='#626161'></box-icon>
+                                <div data-i18n="Boxicons">Ver Pedidos</div>
                             </a>
                         </li>
                     }

@@ -34,7 +34,7 @@ namespace ProyectoWeb.Controllers
                 if (long.TryParse(idUsuarioString, out long idUsuario))
                 {
                     var id = idUsuario;
-                    var datos = _comentariosModel.VerComentarios().Where(x => x.IdUsuario == id).ToList();
+                    var datos = _comentariosModel.VerComentarios();
                     return View(datos);
                 }
             }
