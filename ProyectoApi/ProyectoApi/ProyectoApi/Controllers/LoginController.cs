@@ -14,11 +14,12 @@ namespace ProyectoApi.Controllers
     {
         private readonly IConfiguration _configuration;
         private string _connection;
-
-        public LoginController(IConfiguration configuration)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public LoginController(IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
             _configuration = configuration;
             _connection = _configuration.GetConnectionString("DefaultConnection");
+            _httpContextAccessor = httpContextAccessor;
         }
 
         [HttpPost]
@@ -35,6 +36,7 @@ namespace ProyectoApi.Controllers
 
                     if (datos != null)
                     {
+                        _httpContextAccessor.HttpContext.Session.SetString("IdUsuario", datos.IdUsuario.ToString());
                         return Ok(datos);
                     }
                     else

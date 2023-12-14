@@ -37,3 +37,13 @@ C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoA
 C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoApi\ProyectoApi\ProyectoApi\obj\Debug\net6.0\ProyectoApi.pdb
 C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoApi\ProyectoApi\ProyectoApi\obj\Debug\net6.0\ProyectoApi.genruntimeconfig.cache
 C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoApi\ProyectoApi\ProyectoApi\obj\Debug\net6.0\ref\ProyectoApi.dll
+C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoApi\ProyectoApi\ProyectoApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoApi\ProyectoApi\ProyectoApi\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoApi\ProyectoApi\ProyectoApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoApi\ProyectoApi\ProyectoApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoApi\ProyectoApi\ProyectoApi\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoApi\ProyectoApi\ProyectoApi\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoApi\ProyectoApi\ProyectoApi\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoApi\ProyectoApi\ProyectoApi\bin\Debug\net6.0\Scrutor.dll
+C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoApi\ProyectoApi\ProyectoApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\seanb\Documents\ProyectoPrograAvanzadaEnWeb\PrograAvanzadaWeb\ProyectoApi\ProyectoApi\ProyectoApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

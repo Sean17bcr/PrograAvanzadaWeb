@@ -10,6 +10,6 @@
         public string contrasenna { get; set; } = string.Empty;
         public long ConRol { get; set; }
         public bool estado { get; set; }
-        
+
     }
 }

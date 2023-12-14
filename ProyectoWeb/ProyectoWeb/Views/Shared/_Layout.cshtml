@@ -221,7 +221,15 @@
                                         <span class="align-middle">Cerrar Sesión</span>
                                     </a>
                                 </li>
-
+                                <li>
+                                @if (Context.Session.GetString("NombreUsuario") != null)
+                                {
+                                    <div style="margin-left:2%">
+                                        <box-icon name='spreadsheet' color='#626161'></box-icon> @Context.Session.GetString("Cantidad").ToString() &nbsp;&nbsp;&nbsp;
+                                        <box-icon name='spreadsheet' color='#626161'></box-icon> @decimal.Parse(Context.Session.GetString("Total")).ToString("N2").ToString() + ivi
+                                    </div>
+                                }
+                                </li>
                             }
                             else
                             {
